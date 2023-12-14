@@ -1,0 +1,10 @@
+diff --git a/src/machine/machine_stm32_i2c_revb.go b/src/machine/machine_stm32_i2c_revb.go
+index 92539029..bcc2b3c3 100644
+--- a/src/machine/machine_stm32_i2c_revb.go
++++ b/src/machine/machine_stm32_i2c_revb.go
+@@ -1,4 +1,4 @@
+-//go:build stm32l5 || stm32f7 || stm32l4 || stm32l0 || stm32wlx
++//go:build stm32l5 || stm32f7 || stm32l4 || stm32l0 || stm32wlx || stm32g0
+ 
+ package machine
+ 

@@ -1,0 +1,10 @@
+diff --git a/src/machine/machine_stm32_exti_exti.go b/src/machine/machine_stm32_exti_exti.go
+index 874a0438..1a0dd756 100644
+--- a/src/machine/machine_stm32_exti_exti.go
++++ b/src/machine/machine_stm32_exti_exti.go
+@@ -1,4 +1,4 @@
+-//go:build stm32l5
++//go:build stm32l5 || stm32g0
+ 
+ package machine
+ 

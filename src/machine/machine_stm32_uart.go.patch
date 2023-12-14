@@ -1,0 +1,44 @@
+diff --git a/src/machine/machine_stm32_uart.go b/src/machine/machine_stm32_uart.go
+index 6e8806c8..441b40b6 100644
+--- a/src/machine/machine_stm32_uart.go
++++ b/src/machine/machine_stm32_uart.go
+@@ -52,18 +52,37 @@ func (uart *UART) Configure(config UARTConfig) {
+ 	// Set baud rate
+ 	uart.SetBaudRate(config.BaudRate)
+ 
++	cr1 := uart.Bus.CR1.Get()
++	cr1 &^= stm32.USART_CR1_UE
++	uart.Bus.CR1.Set(cr1)
++
+ 	// Enable USART port, tx, rx and rx interrupts
+-	uart.Bus.CR1.Set(stm32.USART_CR1_TE | stm32.USART_CR1_RE | stm32.USART_CR1_RXNEIE | stm32.USART_CR1_UE)
++	cr1 = stm32.USART_CR1_FIFOEN |
++		stm32.USART_CR1_TE |
++		stm32.USART_CR1_RE |
++		stm32.USART_CR1_RXNEIE
++	uart.Bus.CR1.Set(cr1)
++	uart.Bus.CR1.Set(cr1 | stm32.USART_CR1_UE)
+ 
+ 	// Enable RX IRQ
+ 	uart.Interrupt.SetPriority(0xc0)
+ 	uart.Interrupt.Enable()
+ }
+ 
++var NORE int
++
+ // handleInterrupt should be called from the appropriate interrupt handler for
+ // this UART instance.
+ func (uart *UART) handleInterrupt(interrupt.Interrupt) {
+-	uart.Receive(byte((uart.rxReg.Get() & 0xFF)))
++	isr := uart.Bus.ISR.Get()
++	if isr&stm32.USART_ISR_ORE != 0 {
++		NORE++
++		uart.Bus.ICR.SetBits(stm32.USART_ICR_ORECF)
++	}
++	for isr&stm32.USART_ISR_RXNE != 0 {
++		uart.Receive(byte((uart.rxReg.Get() & 0xFF)))
++		isr = uart.Bus.ISR.Get()
++	}
+ }
+ 
+ // SetBaudRate sets the communication speed for the UART. Defer to chip-specific

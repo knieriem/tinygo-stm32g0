@@ -1,0 +1,10 @@
+diff --git a/src/machine/machine_stm32_rng.go b/src/machine/machine_stm32_rng.go
+index 5eaff961..dc29f13f 100644
+--- a/src/machine/machine_stm32_rng.go
++++ b/src/machine/machine_stm32_rng.go
+@@ -1,4 +1,4 @@
+-//go:build stm32 && !(stm32f103 || stm32l0x1)
++//go:build stm32 && !(stm32f103 || stm32l0x1 || stm32g0x1)
+ 
+ package machine
+ 

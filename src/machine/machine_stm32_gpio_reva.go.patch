@@ -1,0 +1,10 @@
+diff --git a/src/machine/machine_stm32_gpio_reva.go b/src/machine/machine_stm32_gpio_reva.go
+index 2fb5a034..d7eaad0a 100644
+--- a/src/machine/machine_stm32_gpio_reva.go
++++ b/src/machine/machine_stm32_gpio_reva.go
+@@ -1,4 +1,4 @@
+-//go:build stm32 && !stm32l4 && !stm32l5 && !stm32wlx
++//go:build stm32 && !stm32l4 && !stm32l5 && !stm32wlx && !stm32g0
+ 
+ package machine
+ 
