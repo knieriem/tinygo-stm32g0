@@ -13,7 +13,14 @@ func CPUFrequency() uint32 {
 	return 16000000
 }
 
-var deviceIDAddr = []uintptr{0x1FF80050, 0x1FF80054, 0x1FF80058} // FIXME
+// The UID register is documented for g0x1 series, and is reported to be
+// missing in g0x0 series; some users mention they can read the UID even
+// on g0x0, though.
+//
+// UID[31:0] X and Y coordinates on the waver (bcd format)
+// UID[39:32] wafer number (uint8)
+// UID[95:40] lot number (6 ASCII characters)
+var deviceIDAddr = []uintptr{0x1FFF7590, 0x1FFF7594, 0x1FFF7598}
 
 // Internal use: configured speed of the APB1 and APB2 timers, this should be kept
 // in sync with any changes to runtime package which configures the oscillators
