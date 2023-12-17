@@ -25,3 +25,6 @@ targets/stm32g031k8.ld
 
 src/machine/board_nucleog031k8.go
 targets/nucleo-g031k8.json
+
+src/machine/board_nucleog071rb.go
+targets/nucleo-g071rb.json

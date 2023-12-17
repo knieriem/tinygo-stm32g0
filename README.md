@@ -3,8 +3,11 @@ This repository contains files adding initial support for STM32G0 microcontrolle
 The implementation is based on existing ones for L0 and L5,
 using a recent revision (v0.30.0+) from the dev branch of TinyGo. It is a work in progress;
 once remaining problems are resolved, it could be integrated into TinyGo.
-So far UART, GPIO, I²C and SPI have been used successfully on an G031K8
-on a NUCLEO-32 board, and on a G030K6 on a proprietary board.
+So far UART, GPIO, I²C and SPI have been used successfully on
+
+-	the NUCLEO-32 G031K8 board,
+-	the NUCLEO-64 G071RB board,
+-	and a proprietary G030K6 based board.
 
 [TinyGo]: https://github.com/tinygo-org/tinygo
 
