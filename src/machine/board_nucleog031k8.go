@@ -66,14 +66,18 @@ const (
 )
 
 var (
-	// USART2 is the hardware serial port connected to the onboard ST-LINK
-	// debugger to be exposed as virtual COM port over USB on Nucleo boards.
+	// USART2 (alt func 1) is the hardware serial port connected to the
+	// onboard ST-LINK debugger to be exposed as virtual COM
+	// port over USB on Nucleo boards. We use LPUART here, though,
+	// since it is available on the same pins (PA2/PA3) and provides
+	// RX/TX FIFOs. For g0 controllers < g07x the USART2 is available
+	// in a BASIC implementation only, which lacks FIFOs.
 	UART1  = &_UART1
 	_UART1 = UART{
 		Buffer:            NewRingBuffer(),
-		Bus:               stm32.USART2,
-		TxAltFuncSelector: 1,
-		RxAltFuncSelector: 1,
+		Bus:               stm32.LPUART,
+		TxAltFuncSelector: 6,
+		RxAltFuncSelector: 6,
 	}
 	DefaultUART = UART1
 
@@ -93,5 +97,5 @@ var (
 )
 
 func init() {
-	UART1.Interrupt = interrupt.New(stm32.IRQ_USART2, _UART1.handleInterrupt)
+	UART1.Interrupt = interrupt.New(stm32.IRQ_USART3_USART4_LPUART1, _UART1.handleInterrupt)
 }
