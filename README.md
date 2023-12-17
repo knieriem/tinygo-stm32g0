@@ -14,7 +14,7 @@ So far UART, GPIO, I²C and SPI have been used successfully on
 To add these files to TinyGo, run
 
 ```sh
-make TINYGO=path-to-tinygo dist
+make dist TINYGO=path-to-tinygo
 ```
 
 which will produce a tar file that may be untared within the root of
