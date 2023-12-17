@@ -10,7 +10,7 @@ import (
 )
 
 func CPUFrequency() uint32 {
-	return 64000000
+	return 16000000
 }
 
 var deviceIDAddr = []uintptr{0x1FF80050, 0x1FF80054, 0x1FF80058} // FIXME
@@ -206,10 +206,10 @@ func (uart *UART) getBaudRateDivisor(baudRate uint32) uint32 {
 		clock = CPUFrequency() / 2 // APB1 Frequency
 		rate = uint32((256 * clock) / baudRate)
 	case stm32.USART1:
-		clock = CPUFrequency() / 8 // APB2 Frequency
+		clock = CPUFrequency() / 2 // APB2 Frequency
 		rate = uint32(clock / baudRate)
 	case stm32.USART2:
-		clock = CPUFrequency() / 8 // APB1 Frequency
+		clock = CPUFrequency() / 2 // APB1 Frequency
 		rate = uint32(clock / baudRate)
 	}
 
