@@ -18,8 +18,8 @@ var deviceIDAddr = []uintptr{0x1FF80050, 0x1FF80054, 0x1FF80058} // FIXME
 // Internal use: configured speed of the APB1 and APB2 timers, this should be kept
 // in sync with any changes to runtime package which configures the oscillators
 // and clock frequencies
-const APB1_TIM_FREQ = 16e6 // 32MHz
-const APB2_TIM_FREQ = 16e6 // 32MHz
+const APB1_TIM_FREQ = 16e6 // 16MHz
+const APB2_TIM_FREQ = 16e6 // 16MHz
 
 const (
 	PA0  = portA + 0
@@ -216,7 +216,7 @@ func (uart *UART) getBaudRateDivisor(baudRate uint32) uint32 {
 	return rate
 }
 
-// Register names vary by ST processor, these are for STM L0 family
+// Register names vary by ST processor, these are for STM G0 family
 func (uart *UART) setRegisters() {
 	uart.rxReg = &uart.Bus.RDR
 	uart.txReg = &uart.Bus.TDR
