@@ -219,7 +219,6 @@ func (uart *UART) getBaudRateDivisor(baudRate uint32) uint32 {
 		clock = CPUFrequency() / 2 // APB1 Frequency
 		rate = uint32(clock / baudRate)
 	}
-
 	return rate
 }
 
