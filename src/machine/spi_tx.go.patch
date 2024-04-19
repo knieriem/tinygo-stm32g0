@@ -1,10 +1,10 @@
 diff --git a/src/machine/spi_tx.go b/src/machine/spi_tx.go
-index bfc3bfb6..feb06204 100644
+index bb6305fe..9e918f2b 100644
 --- a/src/machine/spi_tx.go
 +++ b/src/machine/spi_tx.go
 @@ -1,4 +1,4 @@
--//go:build !baremetal || atmega || fe310 || k210 || (nxp && !mk66f18) || (stm32 && !stm32f7x2 && !stm32l5x2)
-+//go:build !baremetal || atmega || fe310 || k210 || (nxp && !mk66f18) || (stm32 && !stm32f7x2 && !stm32l5x2 && !stm32g0)
+-//go:build atmega || fe310 || k210 || (nxp && !mk66f18) || (stm32 && !stm32f7x2 && !stm32l5x2)
++//go:build atmega || fe310 || k210 || (nxp && !mk66f18) || (stm32 && !stm32f7x2 && !stm32l5x2 && !stm32g0)
  
  // This file implements the SPI Tx function for targets that don't have a custom
  // (faster) implementation for it.
