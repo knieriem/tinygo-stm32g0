@@ -26,7 +26,7 @@ cat $wd/files | while read f; do
 	elif echo $f | grep '\.patch$' > /dev/null; then
 		src=`echo $f | sed 's,\.patch$,,'`
 		copy $TINYGO/$src  $src
-		if ! patch -s -R --dry-run -p1 < $wd/$f; then
+		if ! patch -f -s -R --dry-run -p1 < $wd/$f >/dev/null; then
 			if ! patch -s -f --dry-run -p1 < $wd/$f; then
 				echo cannot apply $f
 				exit 1
