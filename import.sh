@@ -17,6 +17,8 @@ cat files | while read f; do
 		if ! cmp -s ,,diff $f; then
 			echo updating $f
 			mv -f ,,diff $f
+		else
+			rm -f ,,diff
 		fi
 
 	elif ! cmp -s $TINYGO/$f $f; then
