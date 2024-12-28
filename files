@@ -24,6 +24,7 @@ src/device/stm32/_stm32g031-orig.go
 
 targets/stm32g030k6.ld
 targets/stm32g031k8.ld
+targets/stm32g071rb.ld
 
 src/machine/board_nucleog031k8.go
 targets/nucleo-g031k8.json
