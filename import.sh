@@ -26,3 +26,5 @@ cat files | while read f; do
 		cat < $TINYGO/$f > $f
 	fi
 done
+
+git -C $TINYGO describe --tags > TINYGO
