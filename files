@@ -12,6 +12,8 @@ src/machine/machine_stm32g0.go
 src/machine/machine_stm32g0x1.go
 
 src/runtime/runtime_stm32g0.go
+src/runtime/rand_hwrng.go.patch
+src/runtime/rand_norng.go.patch
 
 src/machine/spi_tx.go.patch
 src/machine/machine_stm32_spi_tx.go

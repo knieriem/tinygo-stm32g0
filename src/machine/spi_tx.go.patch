@@ -1,5 +1,5 @@
 diff --git a/src/machine/spi_tx.go b/src/machine/spi_tx.go
-index bb6305fe..9e918f2b 100644
+index 67076b2b..4eb19a4f 100644
 --- a/src/machine/spi_tx.go
 +++ b/src/machine/spi_tx.go
 @@ -1,4 +1,4 @@

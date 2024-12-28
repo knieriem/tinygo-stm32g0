@@ -1,8 +1,8 @@
 diff --git a/src/machine/machine_generic.go b/src/machine/machine_generic.go
-index e7d513ad..d798dd42 100644
+index 4f040fdb..c6857d50 100644
 --- a/src/machine/machine_generic.go
 +++ b/src/machine/machine_generic.go
-@@ -54,6 +54,7 @@ type SPIConfig struct {
+@@ -58,6 +58,7 @@ type SPIConfig struct {
  	SDO       Pin
  	SDI       Pin
  	Mode      uint8

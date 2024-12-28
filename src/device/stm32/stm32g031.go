@@ -3,8 +3,9 @@
 
 //go:build stm32 && stm32g031
 
+/*
 // STM32G031
-//
+*/
 
 package stm32
 

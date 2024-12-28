@@ -1,0 +1,10 @@
+diff --git a/src/runtime/rand_norng.go b/src/runtime/rand_norng.go
+index a86cdc54..92fc9d73 100644
+--- a/src/runtime/rand_norng.go
++++ b/src/runtime/rand_norng.go
+@@ -1,4 +1,4 @@
+-//go:build baremetal && !(nrf || (stm32 && !(stm32f103 || stm32l0x1)) || (sam && atsamd51) || (sam && atsame5x) || esp32c3 || tkey)
++//go:build baremetal && !(nrf || (stm32 && !(stm32f103 || stm32l0x1 || stm32g0x1)) || (sam && atsamd51) || (sam && atsame5x) || esp32c3 || tkey)
+ 
+ package runtime
+ 

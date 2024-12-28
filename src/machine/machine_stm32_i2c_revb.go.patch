@@ -1,5 +1,5 @@
 diff --git a/src/machine/machine_stm32_i2c_revb.go b/src/machine/machine_stm32_i2c_revb.go
-index 92539029..bcc2b3c3 100644
+index 006661f9..9e184e1b 100644
 --- a/src/machine/machine_stm32_i2c_revb.go
 +++ b/src/machine/machine_stm32_i2c_revb.go
 @@ -1,4 +1,4 @@

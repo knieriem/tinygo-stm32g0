@@ -1,0 +1,10 @@
+diff --git a/src/runtime/rand_hwrng.go b/src/runtime/rand_hwrng.go
+index 2c690b44..6ca9b4d8 100644
+--- a/src/runtime/rand_hwrng.go
++++ b/src/runtime/rand_hwrng.go
+@@ -1,4 +1,4 @@
+-//go:build baremetal && (nrf || (stm32 && !(stm32f103 || stm32l0x1)) || (sam && atsamd51) || (sam && atsame5x) || esp32c3 || tkey)
++//go:build baremetal && (nrf || (stm32 && !(stm32f103 || stm32l0x1 || stm32g0x1)) || (sam && atsamd51) || (sam && atsame5x) || esp32c3 || tkey)
+ 
+ // If you update the above build constraint, you'll probably also need to update
+ // src/crypto/rand/rand_baremetal.go.
